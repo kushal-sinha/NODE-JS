@@ -5,6 +5,12 @@ const express = require('express');
 const app = express();
 app.use((req, res, next) => {
     console.log("Middleware");
+    next(); // this allows us to continue to the next middleware in line
+})
+
+//another middleware
+app.use((req, res, next) => {
+    console.log("another Middleware");
 })
 
 const server = http.createServer(app);
