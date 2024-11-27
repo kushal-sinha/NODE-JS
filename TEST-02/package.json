@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "dev": "npx nodemon app.js"
+  },
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}
