@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const rootDir = require('../util/path')
+// const rootDir = require('../util/path')
 // importing the router from express works same as app.use , get , post 
 const router = express.Router();
 
