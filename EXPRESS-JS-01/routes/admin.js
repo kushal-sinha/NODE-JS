@@ -1,8 +1,14 @@
 const express = require('express');
 const path = require('path');
-// const rootDir = require('../util/path')
+const rootDir = require('../util/path');
+const { title } = require('process');
 // importing the router from express works same as app.use , get , post 
 const router = express.Router();
+
+//for storing data creating a new variable and then storing the data in it
+
+const products = [];
+let name = "";
 
 router.get('/add-product', (req, res, next) => {
     console.log("another Middleware");
@@ -11,9 +17,11 @@ router.get('/add-product', (req, res, next) => {
 
 });
 router.post('/add-product', (req, res, next) => {
-    console.log(req.body);  // Now it will print the form data
-    console.log("Hello");  // Now it will print the form data
+    products.push({ title: req.body.title });  // Now it will print the form data
+    name = req.body.Name;
     res.redirect('/');
 });
 
-module.exports = router;
+exports.routes = router;
+exports.products = products;
+exports.getName = () => name; // Function to return the updated name
