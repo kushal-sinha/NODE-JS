@@ -8,7 +8,6 @@ const router = express.Router();
 //for storing data creating a new variable and then storing the data in it
 
 const products = [];
-let name = "";
 
 router.get('/add-product', (req, res, next) => {
     console.log("another Middleware");
@@ -18,10 +17,8 @@ router.get('/add-product', (req, res, next) => {
 });
 router.post('/add-product', (req, res, next) => {
     products.push({ title: req.body.title });  // Now it will print the form data
-    name = req.body.Name;
     res.redirect('/');
 });
 
 exports.routes = router;
 exports.products = products;
-exports.getName = () => name; // Function to return the updated name
