@@ -10,7 +10,7 @@ router.get('/', (req, res, next) => {
     // res.sendFile(path.join(rootDir, 'views', 'shop.html'));
     const products = adminData.products;
     console.log("Product is", products);
-    res.render('shop', { prods: products, pageTitle: 'Shop', path: '/' });
+    res.render('shop', { prods: products, pageTitle: 'Shop', path: '/', hasProducts: products.length > 0, activeShop: true, productCSS: true });
 
 });
 
