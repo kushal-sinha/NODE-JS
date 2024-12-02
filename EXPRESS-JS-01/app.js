@@ -3,9 +3,11 @@ const bodyparser = require('body-parser');
 const path = require('path');
 
 
+const expressHbs = require('express-handlebars');
 const app = express();
+app.engine('hbs', expressHbs());
 
-app.set('view engine', 'pug');
+app.set('view engine', 'hbs');
 app.set('views', 'views');
 app.use(bodyparser.urlencoded({ extended: false }));
 
